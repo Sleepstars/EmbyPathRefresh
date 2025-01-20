@@ -1,0 +1,24 @@
+app:
+  name: EmbyPathRefresh
+  version: 1.0.0
+
+paths:
+  # 监控的源目录
+  source_dir: /mnt/cdn1/resources
+  # 目标目录
+  target_dir: /mnt/cdn2/test
+  # emby数据库路径
+  emby_db: /var/lib/emby/library.db
+
+timings:
+  # 文件修改后多久进行路径更新（小时）
+  update_after: 24
+  # 更新路径后多久删除源文件（小时），设置为0表示不删除
+  delete_after: 168  # 7天
+
+database:
+  path: ./data/app.db
+
+logging:
+  level: info
+  file: ./logs/app.log
